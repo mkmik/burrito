@@ -4,12 +4,10 @@
 
 
 function MyCtrl1() {}
-MyCtrl1.$inject = [];
 
 
-function MyCtrl2() {
-}
-MyCtrl2.$inject = [];
+function MyCtrl2() {}
+
 
 function NavCtrl($scope, $location, $rootScope) {
     $scope.views = [{path: '/view1', title: "View 1"},
