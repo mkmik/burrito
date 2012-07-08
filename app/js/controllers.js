@@ -3,7 +3,11 @@
 /* Controllers */
 
 
-function MyCtrl1() {}
+function MyCtrl1(Tables) {
+    Tables.put('test', {wow: 1});
+
+    console.log(Tables.get('test'));
+}
 
 
 function MyCtrl2() {}
