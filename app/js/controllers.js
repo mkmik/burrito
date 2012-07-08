@@ -3,10 +3,9 @@
 /* Controllers */
 
 
-function MyCtrl1(Tables) {
-    Tables.put('test', {wow: 1});
-
-    console.log(Tables.get('test'));
+function MyCtrl1($scope, Tables) {
+    Tables.bind($scope, 'firstName');
+    Tables.bind($scope, 'lastName');
 }
 
 
