@@ -4,8 +4,12 @@
 
 
 function MyCtrl1($scope, Tables) {
-    Tables.bind($scope, 'firstName');
-    Tables.bind($scope, 'lastName');
+    $scope.teams = [];
+    Tables.bind($scope, 'teams');
+
+    $scope.addTeam = function() {
+        $scope.teams.push(['','']);
+    }
 }
 
 
