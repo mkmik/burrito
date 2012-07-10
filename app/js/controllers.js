@@ -10,6 +10,14 @@ function MyCtrl1($scope, Tables) {
     $scope.addTeam = function() {
         $scope.teams.push(['','']);
     }
+
+    $scope.removeTeam = function(team) {
+        for (var i = 0, ii = $scope.teams.length; i < ii; i++) {
+            if (team === $scope.teams[i]) {
+                $scope.teams.splice(i, 1);
+            }
+        }
+    }
 }
 
 
