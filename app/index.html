@@ -9,9 +9,18 @@
   <link rel="stylesheet" href="css/font-awesome.css"/>
 </head>
 <body>
-  <ul class="nav nav-pills" ng-controller="NavCtrl" ng-cloak>
-    <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}">{{view.title}}</a></li>
-  </ul>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container ">
+        <a class="brand" href="#">Burrito</a>
+        <ul class="nav" ng-controller="NavCtrl" ng-cloak>
+          <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}">{{view.title}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-spacer"></div>
 
   <div ng-view></div>
 
