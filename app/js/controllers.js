@@ -25,8 +25,8 @@ function MyCtrl2() {}
 
 
 function NavCtrl($scope, $location, $rootScope) {
-    $scope.views = [{path: '/view1', title: "View 1"},
-                    {path: '/view2', title: "View 2"}];
+    $scope.views = [{path: '/view1', title: "Lista Partecipanti"},
+                    {path: '/view2', title: "Punteggi"}];
 
     $rootScope.$watch(function() {return $location.path(); }, function() {
         $scope.currentPage = $location.path();
