@@ -3,12 +3,12 @@
 /* Controllers */
 
 
-function MyCtrl1($scope, Tables) {
+function MyCtrl1($scope, Tables, Team) {
     $scope.teams = [];
     Tables.bind($scope, 'teams');
 
     $scope.addTeam = function() {
-        $scope.teams.push(['','']);
+        $scope.teams.push(new Team());
     }
 
     $scope.removeTeam = function(team) {

@@ -2,8 +2,8 @@
 
 <ul>
   <li ng-repeat="team in teams">
-  A: <input ng-model="team[1]"></input>
-  , B: <input ng-model="team[0]"></input>
+  A: <input ng-model="team.a"></input>
+  , B: <input ng-model="team.b"></input>
   <button ng-click="removeTeam(team)" class="btn"><i class="icon-minus-sign"/></button>
   </li>
 </ul>

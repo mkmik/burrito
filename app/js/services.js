@@ -8,5 +8,10 @@
 angular.module('myApp.services', []).
     factory('Tables', function(LocalResource) {
         return LocalResource("Tables");
+    }).factory('Team', function() {
+        function Team() {
+        };
+
+        return Team;
     }).
     value('version', '0.1');
