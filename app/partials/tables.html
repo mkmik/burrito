@@ -3,7 +3,7 @@
     <ul class="nav nav-pills">
       <li><a href="" ng-click="addTable()"><i class="icon-plus"></i>Aggiungi tavolo</a></li>
       <li><a href="" ng-click="shuffle('fixed')"><i class="icon-refresh"/> Sorteggia solo fissi</a></li>
-      <li><a href="" ng-click="shuffle('moving')"><i class="icon-refresh"/> Sorteggia solo mobili</a></li>
+      <li><a href="" ng-click="shuffle('mobile')"><i class="icon-refresh"/> Sorteggia solo mobili</a></li>
       <li><a href="" ng-click="shuffleAll()"><i class="icon-refresh"/> Sorteggia tutti</a></li>
     </ul>
   </div>
@@ -25,10 +25,10 @@
       <input ng-model="table.fixed.b"></input>
       <i class="icon-move icon-large"/>
     </td>
-    <td data-draggable-team="table.moving">
+    <td data-draggable-team="table.mobile">
       <i class="icon-move icon-large"/>
-      <input ng-model="table.moving.a"></input> /
-      <input ng-model="table.moving.b"></input>
+      <input ng-model="table.mobile.a"></input> /
+      <input ng-model="table.mobile.b"></input>
     </td>
     <td>
       <i ng-click="removeTable(table)" class="icon-minus-sign icon-large" ng-hide="$first"/>

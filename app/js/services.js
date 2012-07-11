@@ -26,7 +26,7 @@ angular.module('myApp.services', []).
         function Table(number) {
             this.number = number;
             this.fixed = new Team();
-            this.moving = new Team();
+            this.mobile = new Team();
         };
 
         return Table;
@@ -66,8 +66,8 @@ angular.module('myApp.services', []).
 
                 if(currentTable.fixed === team)
                     return {table: currentTable, side: 'fixed'};
-                if(currentTable.moving === team)
-                    return {table: currentTable, side: 'moving'};
+                if(currentTable.mobile === team)
+                    return {table: currentTable, side: 'mobile'};
             }
         }
 
