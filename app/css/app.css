@@ -37,11 +37,11 @@
   margin-left: 12px;
 }
 
-#tables td:nth-child(1) {
+#tables td:nth-child(2) {
   border-right: solid 2px #666;
   padding-right: 18px;
 }
 
-#tables td:nth-child(2) {
+#tables td:nth-child(3) {
   padding-left: 10px;
 }

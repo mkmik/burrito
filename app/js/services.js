@@ -14,7 +14,8 @@ angular.module('myApp.services', []).
 
         return Team;
     }).factory('Table', function(Team) {
-        function Table() {
+        function Table(number) {
+            this.number = number;
             this.fixed = new Team();
             this.moving = new Team();
         };

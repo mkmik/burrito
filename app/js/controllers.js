@@ -8,7 +8,7 @@ function MyCtrl1($scope, Tables, Table) {
     Tables.bind($scope, 'tables');
 
     $scope.addTable = function() {
-        $scope.tables.push(new Table());
+        $scope.tables.push(new Table($scope.tables.length + 1));
     }
 
     $scope.removeTable = function(team) {
@@ -16,6 +16,10 @@ function MyCtrl1($scope, Tables, Table) {
             if (team === $scope.tables[i]) {
                 $scope.tables.splice(i, 1);
             }
+        }
+        // renumber
+        for (var i = 0, ii = $scope.tables.length; i < ii; i++) {
+            $scope.tables[i].number = i+1;
         }
     }
 }

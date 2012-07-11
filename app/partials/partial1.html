@@ -2,21 +2,23 @@
 
 <table id="tables">
   <tr>
+    <th>Numero</th>
     <th>Fisso</th>
     <th>Mobile</th>
   </tr>
   <tr ng-repeat="table in tables">
+    <td>{{table.number}}</td>
     <td>
-      A: <input ng-model="table.fixed.a"></input>
-      , B: <input ng-model="table.fixed.b"></input>
+      <input ng-model="table.fixed.a"></input> /
+      <input ng-model="table.fixed.b"></input>
     </td>
     <td>
-      A: <input ng-model="table.moving.a"></input>
-      , B: <input ng-model="table.moving.b"></input>
+      <input ng-model="table.moving.a"></input> /
+      <input ng-model="table.moving.b"></input>
     </td>
     <td>
-      <button ng-click="removeTable(table)" class="btn"><i class="icon-minus-sign"/></button>
+      <a href="#" ng-click="removeTable(table)"><i class="icon-minus-sign"/></button>
       </td>
   </tr>
 </table>
-<button ng-click="addTable()" class="btn"><i class="icon-plus"></i>Add</button>
+<button ng-click="addTable()" class="btn"><i class="icon-plus"></i>Aggiungi tavolo</button>
