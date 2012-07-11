@@ -8,4 +8,11 @@ angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.directives', 
     $routeProvider.when('/tables', {templateUrl: 'partials/tables.html', controller: TablesCtrl});
     $routeProvider.when('/scores', {templateUrl: 'partials/scores.html', controller: ScoresCtrl});
     $routeProvider.otherwise({redirectTo: '/setup'});
-  }]).run(function(tablesManager) {});
+  }]).run(function($rootScope, tablesManager) {
+      $rootScope.range = function (from, to) {
+          var res = [];
+          for(var i = from; i < to; i++)
+              res.push(i);
+          return res;
+      }
+  });

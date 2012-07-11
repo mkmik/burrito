@@ -93,6 +93,17 @@ background-color: #f99;
   cursor: default;
 }
 
-.scores #tables td {  padding-top: 0px; padding-bottom:0; border-bottom: 1px solid #ccc;}
-.scores #tables th {  border-bottom: 2px solid #ccc;}
+.scores #tables td, #scores td {  padding-top: 0px; padding-bottom:0; border-bottom: 1px solid #ccc;}
+.scores #tables th, #scores th {  border-bottom: 2px solid #ccc;}
 .scores #tables td div { max-width: 100px; height: 36px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.scores #tables td:last-child, .scores #tables th:last-child { border-right: 1px solid #ccc; }
+
+#scores td { height: 36px; width: 36px; text-align: center;}
+#scores td div { width: 36px; text-align: center; margin-left: auto; margin-right: auto;}
+#scores th { width: 36px; text-align: center; }
+#scores td, #scores th { border-right: 1px solid #ccc; }
+
+
+#scores-container { overflow: auto; max-width: 100%; }
+
+.container.scores {  width: 100%; }
