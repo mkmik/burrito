@@ -8,12 +8,12 @@
   </tr>
   <tr ng-repeat="table in tables">
     <td>{{table.number}}</td>
-    <td data-draggable-team>
+    <td data-draggable-team="table.fixed">
       <input ng-model="table.fixed.a"></input> /
       <input ng-model="table.fixed.b"></input>
       <i class="icon-move icon-large"/>
     </td>
-    <td data-draggable-team>
+    <td data-draggable-team="table.moving">
       <i class="icon-move icon-large"/>
       <input ng-model="table.moving.a"></input> /
       <input ng-model="table.moving.b"></input>
