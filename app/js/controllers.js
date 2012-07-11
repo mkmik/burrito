@@ -2,9 +2,8 @@
 
 /* Controllers */
 
-function SetupCtrl($scope, $rootScope, config) {
+function SetupCtrl($scope, $rootScope) {
     $scope.reset = function() {
-        console.log("resetting");
         $rootScope.$emit('globalReset');
     }
 }
