@@ -8,7 +8,7 @@ angular.module('myApp.directives', []).
     return function(scope, elm, attrs) {
       elm.text(version);
     };
-  }]).directive('draggableTeam', function() {
+  }]).directive('draggableTeam', function(tablesManager) {
       return {
           link: function(scope, element, attrs) {
               $(element).data('draggable-team', scope.$eval(attrs.draggableTeam));
@@ -28,7 +28,7 @@ angular.module('myApp.directives', []).
                                    });
 
               function handleDrop(event, ui) {
-                  console.log("dropped", ui.draggable.data('draggable-team'), "over", $(element).data('draggable-team'));
+                  tablesManager.swap(ui.draggable.data('draggable-team'), $(element).data('draggable-team'));
               }
           }
       };

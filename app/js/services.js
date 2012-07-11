@@ -46,6 +46,27 @@ angular.module('myApp.services', []).
             }
         }
 
+        TablesManager.prototype.findTeam = function(team) {
+            for (var i = 0, ii = this.tables.length; i < ii; i++) {
+                var currentTable = this.tables[i];
+
+                if(currentTable.fixed === team)
+                    return {table: currentTable, side: 'fixed'};
+                if(currentTable.moving === team)
+                    return {table: currentTable, side: 'moving'};
+            }
+        }
+
+        TablesManager.prototype.swap = function(a, b) {
+            $rootScope.$apply(function() {
+                var aPosition = this.findTeam(a);
+                var bPosition = this.findTeam(b);
+
+                var tmp = aPosition.table[aPosition.side];
+                aPosition.table[aPosition.side] = bPosition.table[bPosition.side];
+                bPosition.table[bPosition.side] = tmp;
+            }.bind(this));
+        }
 
         return new TablesManager();
     }).
