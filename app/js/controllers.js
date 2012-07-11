@@ -2,6 +2,12 @@
 
 /* Controllers */
 
+function SetupCtrl($scope, $rootScope, config) {
+    $scope.reset = function() {
+        console.log("resetting");
+        $rootScope.$emit('globalReset');
+    }
+}
 
 function TablesCtrl($scope, tablesManager) {
     $scope.addTable = function() { tablesManager.addTable(); };
@@ -13,7 +19,8 @@ function ScoresCtrl() {}
 
 
 function NavCtrl($scope, $location, $rootScope) {
-    $scope.views = [{path: '/tables', title: "Tavoli"},
+    $scope.views = [{path: '/setup', title:"Impostazioni"},
+                    {path: '/tables', title: "Tavoli"},
                     {path: '/scores', title: "Punteggi"}];
 
     $rootScope.$watch(function() {return $location.path(); }, function() {

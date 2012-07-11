@@ -6,7 +6,14 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('myApp.services', []).
-    factory('Tables', function(LocalResource) {
+    factory('config', function($rootScope, Config) {
+        $rootScope.config = {};
+        Config.bind($rootScope, 'config');
+
+        return $rootScope.config;
+    }).factory('Config', function(LocalResource) {
+        return LocalResource("Config");
+    }).factory('Tables', function(LocalResource) {
         return LocalResource("Tables");
     }).factory('Team', function() {
         function Team() {
@@ -27,6 +34,11 @@ angular.module('myApp.services', []).
             Tables.bind($rootScope, 'tables');
 
             this.tables = $rootScope.tables;
+
+            $rootScope.$on('globalReset', function(event) {
+                this.tables.length = 0;
+                this.addTable();
+            }.bind(this));
         }
 
         TablesManager.prototype.addTable = function() {

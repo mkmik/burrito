@@ -1,0 +1,20 @@
+<ul>
+  <li>Quante mani: <input type="number" ng-model="config.hands"/ min="1" max="6"/></li>
+  <li>Quanti turni: <input type="number" ng-model="config.rounds" min="1" max="6"/></li>
+
+  <li><a href="#resetModal" data-toggle="modal" class="btn">Azzera tutto</a></li>
+</ul>
+
+<div class="modal hide" id="resetModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Azzerare tutto</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sei sicuro di voler azzerare tutto il torneo</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">No</a>
+    <a class="btn btn-primary" data-dismiss="modal" ng-click="reset()">Si</a>
+  </div>
+</div>
