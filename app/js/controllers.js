@@ -11,6 +11,32 @@ function SetupCtrl($scope, $rootScope, config) {
 function TablesCtrl($scope, tablesManager) {
     $scope.addTable = function() { tablesManager.addTable(); };
     $scope.removeTable = function(table) { tablesManager.removeTable(table); };
+
+    $scope.shuffle = function(side) {
+        function shuffle(array) {
+            array = array.slice(0);
+            var tmp, current, top = array.length;
+
+            if(top) while(--top) {
+                current = Math.floor(Math.random() * (top + 1));
+                tmp = array[current];
+                array[current] = array[top];
+                array[top] = tmp;
+            }
+
+            return array;
+        }
+
+        var teams = [];
+        $scope.tables.forEach(function(el) {
+            teams.push(el[side]);
+        });
+        var shuffled = shuffle(teams);
+
+        $scope.tables.forEach(function(el) {
+            el[side] = shuffled.pop();
+        });
+    }
 }
 
 
