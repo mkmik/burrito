@@ -37,11 +37,25 @@
   margin-left: 12px;
 }
 
+#tables td {
+padding-top: 10px;
+padding-bottom:0;
+}
+
 #tables td:nth-child(2) {
   border-right: solid 2px #666;
-  padding-right: 18px;
+  padding-right: 12px;
 }
+
+#tables td:nth-child(2) .icon-move {
+  padding-left: 4px;
+}
+
 
 #tables td:nth-child(3) {
   padding-left: 10px;
+}
+
+#tables .ui-draggable-dragging {
+background-color: #ff9;
 }
