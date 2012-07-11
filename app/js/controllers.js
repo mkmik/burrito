@@ -3,18 +3,18 @@
 /* Controllers */
 
 
-function MyCtrl1($scope, tablesManager) {
+function TablesCtrl($scope, tablesManager) {
     $scope.addTable = function() { tablesManager.addTable(); };
     $scope.removeTable = function(table) { tablesManager.removeTable(table); };
 }
 
 
-function MyCtrl2() {}
+function ScoresCtrl() {}
 
 
 function NavCtrl($scope, $location, $rootScope) {
-    $scope.views = [{path: '/view1', title: "Tavoli"},
-                    {path: '/view2', title: "Punteggi"}];
+    $scope.views = [{path: '/tables', title: "Tavoli"},
+                    {path: '/scores', title: "Punteggi"}];
 
     $rootScope.$watch(function() {return $location.path(); }, function() {
         $scope.currentPage = $location.path();
