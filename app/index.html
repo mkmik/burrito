@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="css/bootstrap.css"/>
   <link rel="stylesheet" href="css/font-awesome.css"/>
 </head>
-<body>
+<body ng-cloak>
 
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container ">
         <a class="brand" href="#">Burrito</a>
         <ul class="nav" ng-controller="NavCtrl" ng-cloak>
-          <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}">{{view.title}}</a></li>
+          <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}" ng-bind="view.title"></a></li>
         </ul>
       </div>
     </div>
