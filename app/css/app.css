@@ -37,23 +37,35 @@
   margin-left: 12px;
 }
 
+#tables th {
+  text-align: left;
+}
+
 #tables td {
 padding-top: 10px;
 padding-bottom:0;
 }
 
-#tables td:nth-child(2) {
+#tables td:first-child, #tables th:first-child,
+#tables td:nth-child(2), #tables th:nth-child(2) {
   border-right: solid 2px #666;
   padding-right: 12px;
 }
 
-#tables td:nth-child(2) .icon-move {
-  padding-left: 4px;
+#tables td:first-child, #tables th:first-child {
+  width: 10px;
 }
 
+#tables td:nth-child(2), #tables th:nth-child(2)  {
+  padding-left: 8px;
+}
 
-#tables td:nth-child(3) {
+#tables td:nth-child(3), #tables th:nth-child(3) {
   padding-left: 10px;
+}
+
+#tables td:nth-child(2) .icon-move {
+  padding-left: 4px;
 }
 
 #tables .ui-draggable-dragging {
@@ -80,3 +92,7 @@ background-color: #f99;
   color: #999999;
   cursor: default;
 }
+
+.scores #tables td {  padding-top: 0px; padding-bottom:0; border-bottom: 1px solid #ccc;}
+.scores #tables th {  border-bottom: 2px solid #ccc;}
+.scores #tables td div { max-width: 100px; height: 36px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

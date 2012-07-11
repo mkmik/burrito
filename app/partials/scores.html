@@ -40,19 +40,28 @@
 
 <div class="navbar-spacer">&nbsp;</div>
 
-<table id="tables">
-  <tr>
-    <th>Tavolo</th>
-    <th>Fisso</th>
-    <th>Mobile</th>
-  </tr>
-  <tr ng-repeat="table in tables">
-    <td>{{table.number}}</td>
-    <td>
-      {{table.fixed.a}} / {{table.fixed.a}}
-    </td>
-    <td>
-      {{table.moving.a}} / {{table.moving.a}}
-    </td>
-  </tr>
-</table>
+<div class="container-fluid scores">
+  <div class="row">
+    <div class="span6">
+      <table id="tables" width="100%">
+        <tr>
+          <th>Tavolo</th>
+          <th>Fisso</th>
+          <th>Mobile</th>
+        </tr>
+        <tr ng-repeat="table in tables">
+          <td><div>{{table.number}}<div></td>
+          <td>
+            <div>{{table.fixed.a}}<br>{{table.fixed.b}}</div>
+          </td>
+          <td>
+            <div>{{table.moving.a}}<br>{{table.moving.b}}</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="span6">
+      Hi
+    </div>
+  </div>
+</div>
