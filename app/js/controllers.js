@@ -29,12 +29,14 @@ function TablesCtrl($scope, tablesManager) {
     $scope.shuffle = function(side) {
         var teams = [];
         $scope.tables.forEach(function(el) {
-            teams.push(el[side]);
+            if(!el[side].locked)
+                teams.push(el[side]);
         });
         var shuffled = shuffle(teams);
 
         $scope.tables.forEach(function(el) {
-            el[side] = shuffled.pop();
+            if(!el[side].locked)
+                el[side] = shuffled.pop();
         });
     }
 
@@ -50,6 +52,10 @@ function TablesCtrl($scope, tablesManager) {
             el.fixed = shuffled.pop();
             el.mobile = shuffled.pop();
         });
+    }
+
+    $scope.toggleLock = function(team) {
+        team.locked = !team.locked;
     }
 }
 
