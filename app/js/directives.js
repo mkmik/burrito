@@ -22,6 +22,12 @@ angular.module('myApp.directives', []).
                                     snap: true,
                                     zIndex: 200,
                                     containment: '#tables',
+                                    start: function() {
+                                        $(element).addClass("ui-draggable-dragging-original");
+                                    },
+                                    stop: function() {
+                                        $(element).removeClass("ui-draggable-dragging-original");
+                                    }
                                     });
 
               $(element).droppable({drop: handleDrop,

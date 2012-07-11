@@ -60,6 +60,11 @@ padding-bottom:0;
 background-color: #ff9;
 }
 
+#tables .ui-draggable-dragging-original {
+  opacity: 0.4;
+}
+
+
 #tables .ui-droppable-dropping {
 background-color: #f99;
 }
