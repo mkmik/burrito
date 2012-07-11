@@ -4,8 +4,6 @@
 
 
 function MyCtrl1($scope, tablesManager) {
-    console.log("Table manager", tablesManager);
-
     $scope.addTable = function() { tablesManager.addTable(); };
     $scope.removeTable = function(table) { tablesManager.removeTable(table); };
 }
