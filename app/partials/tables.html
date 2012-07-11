@@ -19,7 +19,7 @@
       <input ng-model="table.moving.b"></input>
     </td>
     <td>
-      <a href="#" ng-click="removeTable(table)"><i class="icon-minus-sign icon-large"/></a>
+      <i ng-click="removeTable(table)" class="icon-minus-sign icon-large" ng-hide="$first"/>
       </td>
   </tr>
 </table>

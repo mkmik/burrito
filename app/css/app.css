@@ -64,7 +64,14 @@ background-color: #ff9;
   opacity: 0.4;
 }
 
-
 #tables .ui-droppable-dropping {
 background-color: #f99;
+}
+
+#tables .icon-minus-sign {
+  color: #ccc;
+}
+
+#tables .icon-minus-sign:hover {
+  color: black;
 }
