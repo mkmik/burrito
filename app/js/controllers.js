@@ -3,26 +3,11 @@
 /* Controllers */
 
 
-function MyCtrl1($scope, Tables, Table) {
-    $scope.tables = [];
-    Tables.bind($scope, 'tables');
+function MyCtrl1($scope, tablesManager) {
+    console.log("Table manager", tablesManager);
 
-    $scope.addTable = function() {
-        $scope.tables.push(new Table($scope.tables.length + 1));
-        setTimeout(function() {$('#tables tr:last input:first').focus()}, 100);
-    }
-
-    $scope.removeTable = function(team) {
-        for (var i = 0, ii = $scope.tables.length; i < ii; i++) {
-            if (team === $scope.tables[i]) {
-                $scope.tables.splice(i, 1);
-            }
-        }
-        // renumber
-        for (var i = 0, ii = $scope.tables.length; i < ii; i++) {
-            $scope.tables[i].number = i+1;
-        }
-    }
+    $scope.addTable = function() { tablesManager.addTable(); };
+    $scope.removeTable = function(table) { tablesManager.removeTable(table); };
 }
 
 
