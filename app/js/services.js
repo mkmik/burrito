@@ -34,9 +34,9 @@ angular.module('myApp.services', []).
             setTimeout(function() {$('#tables tr:last input:first').focus()}, 100);
         }
 
-        TablesManager.prototype.removeTable = function(team) {
+        TablesManager.prototype.removeTable = function(table) {
             for (var i = 0, ii = this.tables.length; i < ii; i++) {
-                if (team === this.tables[i]) {
+                if (table === this.tables[i]) {
                     this.tables.splice(i, 1);
                 }
             }
