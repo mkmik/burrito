@@ -86,4 +86,22 @@ angular.module('myApp.directives', []).
               }
           }
       };
+  }).directive('disableChildren', function() {
+      return {
+          restrict: 'A', // only activate on element attribute
+          link: function(scope, element, attrs, ngModel) {
+              scope.$watch(attrs.disableChildren, function(newValue) {
+                  if(newValue)
+                      $(element).addClass('disabled')
+                  else
+                      $(element).removeClass('disabled')
+              });
+
+              $(element).on('click', 'a', function(e) {
+                  if(scope.$eval(attrs.disableChildren))
+                      return false;
+              });
+
+          }
+      }
   });

@@ -75,3 +75,8 @@ background-color: #f99;
 #tables .icon-minus-sign:hover {
   color: black;
 }
+
+.disabled a, .disabled a:hover {
+  color: #999999;
+  cursor: default;
+}
