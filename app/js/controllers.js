@@ -43,14 +43,18 @@ function TablesCtrl($scope, tablesManager) {
     $scope.shuffleAll = function() {
         var teams = [];
         $scope.tables.forEach(function(el) {
-            teams.push(el.fixed);
-            teams.push(el.mobile);
+            if(!el.fixed.locked)
+                teams.push(el.fixed);
+            if(!el.mobile.locked)
+                teams.push(el.mobile);
         });
         var shuffled = shuffle(teams);
 
         $scope.tables.forEach(function(el) {
-            el.fixed = shuffled.pop();
-            el.mobile = shuffled.pop();
+            if(!el.fixed.locked)
+                el.fixed = shuffled.pop();
+            if(!el.mobile.locked)
+                el.mobile = shuffled.pop();
         });
     }
 
