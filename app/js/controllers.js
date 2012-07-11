@@ -9,6 +9,7 @@ function MyCtrl1($scope, Tables, Table) {
 
     $scope.addTable = function() {
         $scope.tables.push(new Table($scope.tables.length + 1));
+        setTimeout(function() {$('#tables tr:last input:first').focus()}, 100);
     }
 
     $scope.removeTable = function(team) {
