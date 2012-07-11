@@ -15,7 +15,8 @@ angular.module('myApp.directives', []).
 
               $(element).draggable({scope: 'team',
                                     handle: '.icon-move',
-                                    revert: true,
+                                    revert: 'invalid',
+                                    helper: 'clone',
                                     revertDuration: 200,
                                     cursor: 'move',
                                     snap: true,
@@ -24,7 +25,9 @@ angular.module('myApp.directives', []).
                                     });
 
               $(element).droppable({drop: handleDrop,
-                                    scope: 'team'
+                                    scope: 'team',
+                                    tolerance: 'pointer',
+                                    hoverClass: 'ui-droppable-dropping',
                                    });
 
               function handleDrop(event, ui) {

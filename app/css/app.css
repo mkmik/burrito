@@ -59,3 +59,7 @@ padding-bottom:0;
 #tables .ui-draggable-dragging {
 background-color: #ff9;
 }
+
+#tables .ui-droppable-dropping {
+background-color: #f99;
+}
