@@ -14,7 +14,7 @@ function TablesCtrl($scope, tablesManager) {
 }
 
 
-function ScoresCtrl($scope, Scores) {
+function ScoresCtrl($scope, Scores, config) {
     $scope.currentRound = 1;
     Scores.bind($scope, 'currentRound');
 
@@ -23,8 +23,15 @@ function ScoresCtrl($scope, Scores) {
     });
 
     $scope.nextRound = function() {
-        $scope.currentRound += 1;
+        if($scope.currentRound < $scope.config.rounds)
+            $scope.currentRound += 1;
     }
+
+    $scope.prevRound = function() {
+        if($scope.currentRound > 1)
+            $scope.currentRound -= 1;
+    }
+
 }
 
 

@@ -2,10 +2,26 @@
   <div class="subnav subnav-fixed">
     <ul class="nav nav-pills">
       <li><a href="">Turno: <span contenteditable type="number" data-singleline ng-model="currentRound"></span></a></li>
-      <li><a href="#nextRound" data-toggle="modal"><i class="icon-forward"/> Prossimo turno</a></li>
+      <li ng-hide="currentRound < 2"><a href="#prevRound" data-toggle="modal"><i class="icon-backward"/> Turno precedente</a></li>
+      <li ng-hide="currentRound >= config.rounds"><a href="#nextRound" data-toggle="modal"><i class="icon-forward"/> Prossimo turno</a></li>
+      <li ng-hide="currentRound != config.rounds"><a href="#finish" data-toggle="modal"><i class="icon-heart-empty"/> Risultati finali</a></li>
     </ul>
   </div>
 </header>
+
+<div class="modal hide" id="prevRound">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Turno precedente: {{currentRound - 1}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sei sicuro di voler andare al turno nr. {{currentRound - 1}}?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">No</a>
+    <a class="btn btn-primary" data-dismiss="modal" ng-click="prevRound()">Si</a>
+  </div>
+</div>
 
 <div class="modal hide" id="nextRound">
   <div class="modal-header">
