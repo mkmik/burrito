@@ -36,3 +36,12 @@
 .main-view {
   margin-left: 12px;
 }
+
+#tables td:nth-child(1) {
+  border-right: solid 2px #666;
+  padding-right: 18px;
+}
+
+#tables td:nth-child(2) {
+  padding-left: 10px;
+}

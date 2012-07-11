@@ -13,5 +13,12 @@ angular.module('myApp.services', []).
         };
 
         return Team;
+    }).factory('Table', function(Team) {
+        function Table() {
+            this.fixed = new Team();
+            this.moving = new Team();
+        };
+
+        return Table;
     }).
     value('version', '0.1');

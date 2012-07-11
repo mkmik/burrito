@@ -3,18 +3,18 @@
 /* Controllers */
 
 
-function MyCtrl1($scope, Tables, Team) {
-    $scope.teams = [];
-    Tables.bind($scope, 'teams');
+function MyCtrl1($scope, Tables, Table) {
+    $scope.tables = [];
+    Tables.bind($scope, 'tables');
 
-    $scope.addTeam = function() {
-        $scope.teams.push(new Team());
+    $scope.addTable = function() {
+        $scope.tables.push(new Table());
     }
 
-    $scope.removeTeam = function(team) {
-        for (var i = 0, ii = $scope.teams.length; i < ii; i++) {
-            if (team === $scope.teams[i]) {
-                $scope.teams.splice(i, 1);
+    $scope.removeTable = function(team) {
+        for (var i = 0, ii = $scope.tables.length; i < ii; i++) {
+            if (team === $scope.tables[i]) {
+                $scope.tables.splice(i, 1);
             }
         }
     }
@@ -25,7 +25,7 @@ function MyCtrl2() {}
 
 
 function NavCtrl($scope, $location, $rootScope) {
-    $scope.views = [{path: '/view1', title: "Lista Partecipanti"},
+    $scope.views = [{path: '/view1', title: "Tavoli"},
                     {path: '/view2', title: "Punteggi"}];
 
     $rootScope.$watch(function() {return $location.path(); }, function() {

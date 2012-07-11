@@ -1,10 +1,22 @@
-<p>Lista partecipanti</p>
+<p>Tavoli:</p>
 
-<ul>
-  <li ng-repeat="team in teams">
-  A: <input ng-model="team.a"></input>
-  , B: <input ng-model="team.b"></input>
-  <button ng-click="removeTeam(team)" class="btn"><i class="icon-minus-sign"/></button>
-  </li>
-</ul>
-<button ng-click="addTeam()" class="btn"><i class="icon-plus"></i>Add</button>
+<table id="tables">
+  <tr>
+    <th>Fisso</th>
+    <th>Mobile</th>
+  </tr>
+  <tr ng-repeat="table in tables">
+    <td>
+      A: <input ng-model="table.fixed.a"></input>
+      , B: <input ng-model="table.fixed.b"></input>
+    </td>
+    <td>
+      A: <input ng-model="table.moving.a"></input>
+      , B: <input ng-model="table.moving.b"></input>
+    </td>
+    <td>
+      <button ng-click="removeTable(table)" class="btn"><i class="icon-minus-sign"/></button>
+      </td>
+  </tr>
+</table>
+<button ng-click="addTable()" class="btn"><i class="icon-plus"></i>Add</button>
