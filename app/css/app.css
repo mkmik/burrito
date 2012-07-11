@@ -107,3 +107,5 @@ background-color: #f99;
 #scores-container { overflow: auto; max-width: 100%; }
 
 .container.scores {  width: 100%; }
+
+#scores .active { background-color: #ffd; }
