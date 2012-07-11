@@ -15,6 +15,8 @@ angular.module('myApp.services', []).
         return LocalResource("Config");
     }).factory('Tables', function(LocalResource) {
         return LocalResource("Tables");
+    }).factory('Scores', function(LocalResource) {
+        return LocalResource("Scores");
     }).factory('Team', function() {
         function Team() {
         };

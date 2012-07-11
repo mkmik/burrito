@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-function SetupCtrl($scope, $rootScope) {
+function SetupCtrl($scope, $rootScope, config) {
     $scope.reset = function() {
         $rootScope.$emit('globalReset');
     }
@@ -14,7 +14,18 @@ function TablesCtrl($scope, tablesManager) {
 }
 
 
-function ScoresCtrl() {}
+function ScoresCtrl($scope, Scores) {
+    $scope.currentRound = 1;
+    Scores.bind($scope, 'currentRound');
+
+    $scope.$on('globalReset', function() {
+        $scope.currentRound = 1;
+    });
+
+    $scope.nextRound = function() {
+        $scope.currentRound += 1;
+    }
+}
 
 
 function NavCtrl($scope, $location, $rootScope) {

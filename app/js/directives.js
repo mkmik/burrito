@@ -45,4 +45,45 @@ angular.module('myApp.directives', []).
               }
           }
       };
+  }).directive('contenteditable', function() {
+      return {
+          restrict: 'A', // only activate on element attribute
+          require: '?ngModel', // get a hold of NgModelController
+          link: function(scope, element, attrs, ngModel) {
+              if(!ngModel) return; // do nothing if no ng-model
+
+              if(attrs.type === "number")
+                  ngModel.$parsers.push(function (value) {
+                      var i = parseInt(value);
+                      if(i > 0)
+                          return i;
+                      return 1;
+                  });
+
+              // Specify how UI should be updated
+              ngModel.$render = function() {
+                  element.html(ngModel.$viewValue || '');
+              };
+
+              if(attrs.hasOwnProperty('singleline')) {
+                  element.bind('keydown', function(ev) {
+                      if(ev.keyCode == 13) {
+                          $(element).blur();
+                          return false;
+                      }
+                  });
+              }
+
+              // Listen for change events to enable binding
+              element.bind('blur keyup change', function() {
+                  scope.$apply(read);
+              });
+              //read(); // initialize
+
+              // Write data to the model
+              function read() {
+                  ngModel.$setViewValue(element.html());
+              }
+          }
+      };
   });

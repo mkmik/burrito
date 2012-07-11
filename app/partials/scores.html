@@ -1,1 +1,42 @@
-{{config.rounds}}
+<header class="subhead jumbotron">
+  <div class="subnav subnav-fixed">
+    <ul class="nav nav-pills">
+      <li><a href="">Turno: <span contenteditable type="number" data-singleline ng-model="currentRound"></span></a></li>
+      <li><a href="#nextRound" data-toggle="modal"><i class="icon-forward"/> Prossimo turno</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="modal hide" id="nextRound">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Prossimo turno: {{currentRound + 1}}</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sei sicuro di voler andare al turno nr. {{currentRound + 1}}?</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">No</a>
+    <a class="btn btn-primary" data-dismiss="modal" ng-click="nextRound()">Si</a>
+  </div>
+</div>
+
+
+<div class="navbar-spacer">&nbsp;</div>
+
+<table id="tables">
+  <tr>
+    <th>Tavolo</th>
+    <th>Fisso</th>
+    <th>Mobile</th>
+  </tr>
+  <tr ng-repeat="table in tables">
+    <td>{{table.number}}</td>
+    <td>
+      {{table.fixed.a}} / {{table.fixed.a}}
+    </td>
+    <td>
+      {{table.moving.a}} / {{table.moving.a}}
+    </td>
+  </tr>
+</table>
