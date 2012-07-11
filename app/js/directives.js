@@ -38,6 +38,10 @@ angular.module('myApp.directives', []).
 
               function handleDrop(event, ui) {
                   tablesManager.swap(ui.draggable.data('draggable-team'), $(element).data('draggable-team'));
+
+                  var tmp = ui.draggable.data('draggable-team');
+                  ui.draggable.data('draggable-team', $(element).data('draggable-team'));
+                  $(element).data('draggable-team', tmp);
               }
           }
       };
