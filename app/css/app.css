@@ -110,7 +110,7 @@ background-color: #f99;
 #scores tr.even { background-color: #f4f4ff; }
 #scores tr.even td { border-bottom: 1px solid #aaa; }
 
-#scores-container { overflow: auto; max-width: 100%; }
+.scores-container { overflow: auto; max-width: 100%; }
 
 .container.scores {  width: 100%; }
 
