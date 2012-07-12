@@ -86,9 +86,9 @@ function ScoresCtrl($scope, Scores, config) {
 
 
 function NavCtrl($scope, $location, $rootScope) {
-    $scope.views = [{path: '/setup', title:"Impostazioni"},
-                    {path: '/tables', title: "Tavoli"},
-                    {path: '/scores', title: "Punteggi"}];
+    $scope.views = [{path: '/setup', title:'<i class="icon-cog"/> Impostazioni'},
+                    {path: '/tables', title: '<i class="icon-group"/> Tavoli'},
+                    {path: '/scores', title: '<i class="icon-book"/> Punteggi'}];
 
     $rootScope.$watch(function() {return $location.path(); }, function() {
         $scope.currentPage = $location.path();

@@ -16,7 +16,7 @@
       <div class="container ">
         <a class="brand" href="#">Burrito</a>
         <ul class="nav" ng-controller="NavCtrl" ng-cloak>
-          <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}" ng-bind="view.title"></a></li>
+          <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}" ng-bind-html-unsafe="view.title"></a></li>
         </ul>
       </div>
     </div>
