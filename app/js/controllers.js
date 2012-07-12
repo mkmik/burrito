@@ -121,7 +121,10 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
 
     $scope.acceptScore = function(matchpoints) {
         $scope.currentMatchpoints = undefined;
-        $scope.selectedTable += 1;
+        if(config.autoNextTable)
+            $scope.selectedTable += 1;
+        else
+            $scope.selectedTable = undefined;
         setTimeout(function() {$('#table').focus()}, 0);
     };
 }
