@@ -13,8 +13,8 @@
 
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-      <div class="container ">
-        <a class="brand" href="#">Burrito</a>
+      <div class="container pull-left">
+        <a class="brand" href="#" ng-bind-template="Burrito: Torneo ({{config.hands}} Mani, {{config.rounds}} Turni)"></a>
         <ul class="nav" ng-controller="NavCtrl" ng-cloak>
           <li ng-repeat="view in views" ng-class="activeNav(view)"><a href="#{{view.path}}" ng-bind-html-unsafe="view.title"></a></li>
         </ul>
