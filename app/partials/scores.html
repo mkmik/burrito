@@ -85,8 +85,10 @@
       <table id="scores" width="100%">
         <tr>
           <th>{{currentRound}}</th>
+          <th>Totale</th>
         </tr>
-        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'">
+        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'" ng-class="{true: 'active'}[selectedTable == teamTable.number]">
+          <td><div>{{teamTable.number}}<div></td>
           <td><div>{{teamTable.number}}<div></td>
         </tr>
       </table>
