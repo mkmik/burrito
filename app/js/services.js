@@ -82,6 +82,22 @@ angular.module('myApp.services', []).
             }.bind(this));
         }
 
+        TablesManager.prototype.rotate = function() {
+            var teams = [];
+            this.tables.forEach(function(el) {
+                teams.push(el.mobile);
+            });
+
+            var last = teams.pop();
+            teams.unshift(last);
+
+            this.tables.forEach(function(el) {
+                el.mobile = teams.shift();
+            });
+
+
+        }
+
         return new TablesManager();
     }).
     value('version', '0.1');

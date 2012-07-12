@@ -61,10 +61,14 @@ function TablesCtrl($scope, tablesManager) {
     $scope.toggleLock = function(team) {
         team.locked = !team.locked;
     }
+
+    $scope.rotate = function() {
+        tablesManager.rotate();
+    }
 }
 
 
-function ScoresCtrl($scope, Scores, config) {
+function ScoresCtrl($scope, Scores, config, tablesManager) {
     $scope.currentRound = 1;
     Scores.bind($scope, 'currentRound');
 
@@ -72,7 +76,11 @@ function ScoresCtrl($scope, Scores, config) {
         $scope.currentRound = 1;
     });
 
-    $scope.nextRound = function() {
+    $scope.nextRound = function(kind) {
+        console.log("next round", kind, kind == 'rotate');
+        if(kind == 'rotate')
+            tablesManager.rotate();
+
         if($scope.currentRound < $scope.config.rounds)
             $scope.currentRound += 1;
     }
