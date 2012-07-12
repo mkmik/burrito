@@ -99,6 +99,8 @@ background-color: #f99;
 .scores #tables td div { max-width: 100px; height: 18px;  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .scores #tables td:last-child, .scores #tables th:last-child { border-right: 2px solid #666; }
 .scores #tables tr.even { background-color: #f4f4ff; }
+.scores #tables tr.active { background-color: #ffd; }
+.scores #tables tr.active.even { background-color: #fafae4; }
 .scores #tables tr.even td, .scores #tables td.table { border-bottom: 1px solid #aaa; }
 #tables td.table, #tables th.table { text-align: center; }
 .scores #tables td:nth-child(2), #tables th:nth-child(2) { border-right: solid 1px #ccc; }
@@ -118,3 +120,15 @@ background-color: #f99;
 #scores tr.even td.active { background-color: #fafae4; }
 
 .scores .btn-toolbar { margin-bottom: 10px; text-align: right;}
+
+.entry-widget .table { float:left;}
+.entry-widget .table input { width: 74px; height: 64px; font-size: 24px; text-align: center; }
+.entry-widget .matchpoints {  }
+.entry-widget .matchpoints div.assignee {  overflow: hidden; text-overflow: ellipsis; height: 1.3em;}
+
+.entry-widget .matchpoints input::-webkit-outer-spin-button,
+.entry-widget .matchpoints input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}

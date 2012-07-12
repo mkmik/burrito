@@ -57,7 +57,7 @@
           <th></th>
           <th></th>
         </tr>
-        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'">
+        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'" ng-class="{true: 'active'}[selectedTable == teamTable.number]">
           <td ng-hide="!teamTable.first" rowspan="2" class="table"><div>{{teamTable.number}}<div></td>
           <td>
             <div>{{teamTable.a}}
@@ -81,8 +81,8 @@
       </table>
     </div>
 
-    <div class="scores-container" ng-hide="config.showHistory">
-      <table id="scores">
+    <div class="scores-container span2" ng-hide="config.showHistory">
+      <table id="scores" width="100%">
         <tr>
           <th>{{currentRound}}</th>
         </tr>
@@ -91,5 +91,19 @@
         </tr>
       </table>
     </div>
+
+    <div class="span6 well entry-widget" ng-hide="config.showHistory">
+      <div class="table">
+        <label for="table">Tavolo:</label>
+        <input id="table" type="number" ng-model="selectedTable" min="1" max="{{tables.length}}"/>
+      </div>
+      <div class="matchpoints">
+        <div>
+          <label for="matchpoints">Matchpoints:</label>
+          <input id="matchpoints" type="number" ng-disabled="!selectedTable"/>
+        </div>
+        <div class="assignee"><span ng-show="selectedTable">{{tables[selectedTable - 1].fixed.a}} / {{tables[selectedTable - 1].fixed.b}}</span></div>
+      </div>
+    <div>
   </div>
 </div>
