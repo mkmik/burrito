@@ -97,6 +97,10 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
             $scope.teamTables.push({number: table.number, a: table.mobile.a, b: table.mobile.b});
         });
     }, true);
+
+    $scope.toggleHistory = function() {
+        config.showHistory = !config.showHistory;
+    }
 }
 
 

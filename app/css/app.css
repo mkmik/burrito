@@ -35,6 +35,7 @@
 
 .main-view {
   margin-left: 12px;
+  margin-right: 12px;
 }
 
 #tables th {
@@ -115,3 +116,5 @@ background-color: #f99;
 
 #scores td.active { background-color: #ffd; }
 #scores tr.even td.active { background-color: #fafae4; }
+
+.scores .btn-toolbar { margin-bottom: 10px; text-align: right;}

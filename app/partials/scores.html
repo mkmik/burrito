@@ -42,6 +42,13 @@
 <div class="navbar-spacer">&nbsp;</div>
 
 <div class="container scores">
+  <div class="btn-toolbar">
+    <div class="btn-group">
+      <button ng-click="toggleHistory()" class="btn" ng-class="{true: 'active'}[config.showHistory]"><i class="icon-time"/> Mostra storico</button>
+      <button ng-click="toggleHistory()" class="btn" ng-class="{true: 'active'}[!config.showHistory]"><i class="icon-play-circle "/> Turno corrente: {{currentRound}}</button>
+    </div>
+  </div>
+
   <div class="row">
     <div class="span4">
       <table id="tables" width="100%">
@@ -61,7 +68,8 @@
         </tr>
       </table>
     </div>
-    <div class="" id="scores-container">
+
+    <div class="" id="scores-container" ng-show="config.showHistory">
       <table id="scores" width="100%">
         <tr>
           <th ng-repeat="round in range(1, config.rounds + 1)" class="{{{false:'', true: 'active'}[round == currentRound]}}">{{round}}</th>
@@ -69,6 +77,17 @@
 
         <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'">
           <td ng-repeat="round in range(1, config.rounds + 1)" class="{{{false:'', true: 'active'}[round == currentRound]}}"><div>{{teamTable.number}}<div></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="" id="scores-container" ng-hide="config.showHistory">
+      <table id="scores">
+        <tr>
+          <th>{{currentRound}}</th>
+        </tr>
+        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'">
+          <td><div>{{teamTable.number}}<div></td>
         </tr>
       </table>
     </div>
