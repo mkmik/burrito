@@ -90,6 +90,14 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
             $scope.currentRound -= 1;
     }
 
+    $scope.$watch('tables', function() {
+        console.log("tables changed");
+        $scope.teamTables = [];
+        $scope.tables.forEach(function(table) {
+            $scope.teamTables.push({first: true, number: table.number, a: table.fixed.a, b: table.fixed.b});
+            $scope.teamTables.push({number: table.number, a: table.mobile.a, b: table.mobile.b});
+        });
+    }, true);
 }
 
 
