@@ -102,9 +102,9 @@
       <div class="matchpoints">
         <div>
           <label for="matchpoints">Matchpoints:</label>
-          <input id="matchpoints" type="number" ng-disabled="!selectedTable"/>
+          <input id="matchpoints" type="number" ng-disabled="!selectedTable" ng-model="currentMatchpoints"/>
         </div>
-        <div class="assignee"><span ng-show="selectedTable">{{tables[selectedTable - 1].fixed.a}} / {{tables[selectedTable - 1].fixed.b}}</span></div>
+        <button class="btn btn-primary" ng-disabled="!(selectedTable && currentMatchpoints)" ng-click="acceptScore(currentMatchpoints)">Accetta</button>
       </div>
     <div>
   </div>

@@ -101,6 +101,29 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
     $scope.toggleHistory = function() {
         config.showHistory = !config.showHistory;
     }
+
+    $scope.$watch('!config.showHistory', function(inserting) {
+        if(inserting)
+            setTimeout(function() {$('#table').focus()}, 0);
+    });
+
+    $('#table').bind("keydown", function(ev) {
+        if(ev.keyCode == 13) {
+            setTimeout(function() {$('#matchpoints').focus()}, 0);
+        }
+    });
+
+    $('#matchpoints').bind("change", function() {
+        $scope.$apply(function() {
+            $scope.acceptScore($scope.currentMatchpoints);
+        });
+    });
+
+    $scope.acceptScore = function(matchpoints) {
+        $scope.currentMatchpoints = undefined;
+        $scope.selectedTable += 1;
+        setTimeout(function() {$('#table').focus()}, 0);
+    };
 }
 
 
