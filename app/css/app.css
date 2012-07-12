@@ -111,8 +111,8 @@ background-color: #f99;
 #scores td, #scores th { border-right: 1px solid #ccc; }
 #scores tr.even { background-color: #f4f4ff; }
 #scores tr.even td { border-bottom: 1px solid #aaa; }
+#scores tr.disabled { opacity: 0.4; }
 #scores tr.active { background-color: #ffd; }
-#scores tr.active.even { background-color: #fafae4; }
 
 .scores-container { overflow: auto; max-width: 100%; }
 
