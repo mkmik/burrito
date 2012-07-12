@@ -91,7 +91,6 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
     }
 
     $scope.$watch('tables', function() {
-        console.log("tables changed");
         $scope.teamTables = [];
         $scope.tables.forEach(function(table) {
             $scope.teamTables.push({first: true, number: table.number, a: table.fixed.a, b: table.fixed.b});
