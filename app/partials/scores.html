@@ -57,7 +57,7 @@
           <th></th>
           <th></th>
         </tr>
-        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'" ng-class="{true: 'active'}[selectedTable == teamTable.number]">
+        <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'" ng-class="{true: 'active'}[selectedTable == teamTable.number]" ng-click="selectTable(teamTable.number)">
           <td ng-hide="!teamTable.first" rowspan="2" class="table"><div>{{teamTable.number}}<div></td>
           <td>
             <div>{{teamTable.a}}

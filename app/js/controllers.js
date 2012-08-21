@@ -127,6 +127,11 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
             $scope.selectedTable = undefined;
         setTimeout(function() {$('#table').focus()}, 0);
     };
+
+    $scope.selectTable = function(tableNumber) {
+        $scope.selectedTable = tableNumber;
+        setTimeout(function() {$('#matchpoints').focus()}, 0);
+    };
 }
 
 
