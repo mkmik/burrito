@@ -102,6 +102,7 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
 
     $scope.toggleHistory = function() {
         config.showHistory = !config.showHistory;
+        $scope.selectedTable = null;
     }
 
     $scope.$watch('!config.showHistory', function(inserting) {
@@ -131,8 +132,10 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
     };
 
     $scope.selectTable = function(tableNumber) {
-        $scope.selectedTable = tableNumber;
-        setTimeout(function() {$('#matchpoints').focus()}, 0);
+        if(!config.showHistory) {
+            $scope.selectedTable = tableNumber;
+            setTimeout(function() {$('#matchpoints').focus()}, 0);
+        }
     };
 }
 
