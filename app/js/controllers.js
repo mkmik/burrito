@@ -72,6 +72,8 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
     $scope.currentRound = 1;
     Scores.bind($scope, 'currentRound');
 
+    $('#tables').disableSelection();
+
     $scope.$on('globalReset', function() {
         $scope.currentRound = 1;
     });
