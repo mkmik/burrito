@@ -3,6 +3,7 @@
   <li>Quanti turni: <input type="number" ng-model="config.rounds" min="1" max="32"/></li>
 
   <li><a href="#resetModal" data-toggle="modal" class="btn">Azzera tutto</a></li>
+  <li><a href="#resetScoresModal" data-toggle="modal" class="btn">Azzera solo punteggi</a></li>
 </ul>
 
 <div class="modal hide" id="resetModal">
@@ -16,5 +17,19 @@
   <div class="modal-footer">
     <a href="#" class="btn" data-dismiss="modal">No</a>
     <a class="btn btn-primary" data-dismiss="modal" ng-click="reset()">Si</a>
+  </div>
+</div>
+
+<div class="modal hide" id="resetScoresModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Azzerare solo punteggi</h3>
+  </div>
+  <div class="modal-body">
+    <p>Sei sicuro di voler azzerare i punteggi di tutto il torneo (lasciando intatta l'asegnazione delle persone ai tavoli?)</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">No</a>
+    <a class="btn btn-primary" data-dismiss="modal" ng-click="resetScores()">Si</a>
   </div>
 </div>

@@ -5,7 +5,12 @@
 function SetupCtrl($scope, $rootScope, config) {
     $scope.reset = function() {
         $rootScope.$emit('globalReset');
-    }
+    };
+
+    $scope.resetScores = function() {
+        $rootScope.$emit('scoresReset');
+    };
+
 }
 
 function TablesCtrl($scope, tablesManager) {
@@ -68,7 +73,7 @@ function TablesCtrl($scope, tablesManager) {
 }
 
 
-function ScoresCtrl($scope, Scores, config, tablesManager) {
+function ScoresCtrl($scope, Scores, config, tablesManager, scoresManager) {
     $scope.currentRound = 1;
     Scores.bind($scope, 'currentRound');
 
@@ -123,6 +128,8 @@ function ScoresCtrl($scope, Scores, config, tablesManager) {
     });
 
     $scope.acceptScore = function(matchpoints) {
+        scoresManager.recordMatchpoints($scope.currentRound, $scope.selectedTable - 1, matchpoints);
+
         $scope.currentMatchpoints = undefined;
         if(config.autoNextTable)
             $scope.selectedTable += 1;

@@ -99,5 +99,24 @@ angular.module('myApp.services', []).
         }
 
         return new TablesManager();
+    }).factory('scoresManager', function($rootScope) {
+        $rootScope.$on('scoresReset', function() {
+            console.log("scores reset?");
+        });
+
+
+        function ScoresManager() {
+        };
+
+        ScoresManager.prototype.recordMatchpoints = function(round, position, matchpoints) {
+            console.log("recording matchpoints:", round, position, matchpoints);
+
+            console.log($rootScope.tables[position]);
+            var tab = $rootScope.tables[position];
+            tab.fixed.scores = {};
+            tab.fixed.scores[1] = matchpoints;
+        };
+
+        return new ScoresManager();
     }).
     value('version', '0.1');
