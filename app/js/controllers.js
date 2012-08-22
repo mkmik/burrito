@@ -98,10 +98,27 @@ function ScoresCtrl($scope, Scores, config, tablesManager, scoresManager) {
     }
 
     $scope.$watch('tables', function() {
+        function currentScore(player) {
+            if(player.scores)
+                return '../' + player.scores[$scope.currentRound];
+            return '';
+        }
+
+        function totalScore(player) {
+            if(player.scores) {
+                var total = 0;
+                for(var key in player.scores) {
+                    total += parseInt(player.scores[key], 10);
+                };
+                return '../' + total;
+            }
+            return '';
+        }
+
         $scope.teamTables = [];
         $scope.tables.forEach(function(table) {
-            $scope.teamTables.push({first: true, number: table.number, a: table.fixed.a, b: table.fixed.b});
-            $scope.teamTables.push({number: table.number, a: table.mobile.a, b: table.mobile.b});
+            $scope.teamTables.push({first: true, number: table.number, a: table.fixed.a, b: table.fixed.b, currentScore: currentScore(table.fixed), totalScore: totalScore(table.fixed)});
+            $scope.teamTables.push({number: table.number, a: table.mobile.a, b: table.mobile.b, currentScore: currentScore(table.mobile), totalScore: totalScore(table.mobile)});
         });
     }, true);
 

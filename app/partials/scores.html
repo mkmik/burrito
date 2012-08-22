@@ -88,8 +88,8 @@
           <th>Totale</th>
         </tr>
         <tr ng-repeat="teamTable in teamTables" ng-class-even="'even'" ng-class="{false: 'disabled', true: 'active'}[selectedTable == teamTable.number]">
-          <td><div>{{teamTable.number}}<div></td>
-          <td><div>{{teamTable.number}}<div></td>
+          <td><div>{{teamTable.currentScore}}<div></td>
+          <td><div>{{teamTable.totalScore}}<div></td>
         </tr>
       </table>
     </div>
