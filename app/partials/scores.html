@@ -95,7 +95,10 @@
     </div>
 
     <div class="span6 well entry-widget" ng-hide="config.showHistory">
-      <input type="checkbox" ng-model="config.autoNextTable">Passa automaticamente al prossimo tavolo
+      <label>
+      <input type="checkbox" ng-model="config.autoNextTable">
+      Passa automaticamente al prossimo tavolo
+      </label>
       <div class="table">
         <label for="table">Tavolo:</label>
         <input id="table" type="number" ng-model="selectedTable" min="1" max="{{tables.length}}"/>
