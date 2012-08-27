@@ -23,14 +23,14 @@
     <td>{{table.number}}</td>
     <td data-draggable-team="table.fixed">
       <i ng-class="{true: 'icon-lock', false: 'icon-unlock'}[table.fixed.locked == true]" ng-click="toggleLock(table.fixed)"/>
-      <input ng-model="table.fixed.a"></input> /
-      <input ng-model="table.fixed.b"></input>
+      <input type="text" ng-model="table.fixed.a"></input> /
+      <input type="text" ng-model="table.fixed.b"></input>
       <i class="icon-move icon-large"/>
     </td>
     <td data-draggable-team="table.mobile">
       <i class="icon-move icon-large"/>
-      <input ng-model="table.mobile.a"></input> /
-      <input ng-model="table.mobile.b"></input>
+      <input type="text" ng-model="table.mobile.a"></input> /
+      <input type="text" ng-model="table.mobile.b"></input>
       <i ng-class="{true: 'icon-lock', false: 'icon-unlock'}[table.mobile.locked == true]" ng-click="toggleLock(table.mobile)"/>
     </td>
     <td>
